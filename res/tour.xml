@@ -1,0 +1,336 @@
+<krpano>
+
+    <include url="plugins/combobox.xml" />
+    <include url="%VIEWER%/plugins/webvr.xml" />
+    <global floor="l1" keep="true" />
+
+    <action name="startup" autorun="onstart">
+        if(!startscene, set(startscene, scene_pano_09) );
+        if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+        trace(calc('startscene : ' + get(startscene)));
+        loadscene(get(startscene), null, MERGE);
+        if(startactions !== null, startactions() );
+        set(global.floor, l1);
+    </action>
+
+    <!-- Combobox -->
+
+    <events name="cbevent" keep="true"
+            onDollhouseOn="showFloor(get(global.floor));"
+            onDollhouseOff=""
+            onidle="display_scene_name()"
+    />
+
+    <action name="display_scene_name">
+        trace(calc('display scene name: ' + xml.scene));
+    </action>
+
+
+
+
+    <action name="intro_getVal" type="javascript" autorun="onstart"><![CDATA[
+		window.intro_getVal=()=>{
+			let val=[];
+			//val.push(krpano.xml.scene);
+			val.push(krpano.view.hlookat.toFixed(1));
+			val.push(krpano.view.vlookat.toFixed(1));
+			//val.push(krpano.view.fov.toFixed());
+			val.push(krpano.view.oz.toFixed());
+			//val.push(krpano.view.tx.toFixed());
+			//val.push(krpano.view.tz.toFixed());
+			console.log(val.join('|'));
+		}
+	]]></action>
+
+    <scene heading="" lat="" lng="" name="scene_pano_09" onstart="" thumburl="panos/Pano_09.tiles/thumb.jpg" title="Pano_09">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-51.31" limitview="auto" maxpixelzoom="2.0" vlookat="-0.37" />
+
+        <preview url="panos/Pano_09.tiles/preview.jpg" />
+
+        <image style="style_PANO_09">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_09.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_09.tiles/PANO_09.stl" />
+        </image>
+
+    </scene>
+
+
+    <scene heading="" lat="" lng="" name="scene_pano_10" onstart="" thumburl="panos/Pano_10.tiles/thumb.jpg" title="Pano_10">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="33.7" limitview="auto" maxpixelzoom="2.0" vlookat="2.05" />
+
+        <preview url="panos/Pano_10.tiles/preview.jpg" />
+
+        <image style="style_PANO_10">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_10.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_10.tiles/PANO_10.stl" />
+        </image>
+
+
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_11" onstart="" thumburl="panos/Pano_11.tiles/thumb.jpg" title="Pano_11">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-27.56" limitview="auto" maxpixelzoom="2.0" vlookat="4.42" />
+
+        <preview url="panos/Pano_11.tiles/preview.jpg" />
+
+        <image style="style_PANO_11">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_11.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_11.tiles/PANO_11.stl" />
+        </image>
+
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_12" onstart="" thumburl="panos/Pano_12.tiles/thumb.jpg" title="Pano_12">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-229.75" limitview="auto" maxpixelzoom="2.0" vlookat="5.03" />
+
+        <preview url="panos/Pano_12.tiles/preview.jpg" />
+
+        <image style="style_PANO_12">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_12.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_12.tiles/PANO_12.stl" />
+        </image>
+
+
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_13" onstart="" thumburl="panos/Pano_13.tiles/thumb.jpg" title="Pano_13">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-223.28" limitview="auto" maxpixelzoom="2.0" vlookat="0.53" />
+
+        <preview url="panos/Pano_13.tiles/preview.jpg" />
+
+        <image style="style_PANO_13">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_13.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_13.tiles/PANO_13.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_14" onstart="" thumburl="panos/Pano_14.tiles/thumb.jpg" title="Pano_14">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-133.24" limitview="auto" maxpixelzoom="2.0" vlookat="8.28" />
+
+        <preview url="panos/Pano_14.tiles/preview.jpg" />
+
+        <image style="style_PANO_14">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_14.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_14.tiles/PANO_14.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_15" onstart="" thumburl="panos/Pano_15.tiles/thumb.jpg" title="Pano_15">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-25.79" limitview="auto" maxpixelzoom="2.0" vlookat="5.52" />
+
+        <preview url="panos/Pano_15.tiles/preview.jpg" />
+
+        <image style="style_PANO_15">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_15.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_15.tiles/PANO_15.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_16" onstart="" thumburl="panos/Pano_16.tiles/thumb.jpg" title="Pano_16">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="29.15" limitview="auto" maxpixelzoom="2.0" vlookat="-1.88" />
+
+        <preview url="panos/Pano_16.tiles/preview.jpg" />
+
+        <image style="style_PANO_16">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_16.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_16.tiles/PANO_16.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_17" onstart="" thumburl="panos/Pano_17.tiles/thumb.jpg" title="Pano_17">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="45.63" limitview="auto" maxpixelzoom="2.0" vlookat="3.55" />
+
+        <preview url="panos/Pano_17.tiles/preview.jpg" />
+
+        <image style="style_PANO_17">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_17.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_17.tiles/PANO_17.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_18" onstart="" thumburl="panos/Pano_18.tiles/thumb.jpg" title="Pano_18">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-166.53" limitview="auto" maxpixelzoom="2.0" vlookat="-1.25" />
+
+        <preview url="panos/Pano_18.tiles/preview.jpg" />
+
+        <image style="style_PANO_18">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_18.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_18.tiles/PANO_18.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_20" onstart="" thumburl="panos/Pano_20.tiles/thumb.jpg" title="Pano_20">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-223.28" limitview="auto" maxpixelzoom="2.0" vlookat="2.74" />
+
+        <preview url="panos/Pano_20.tiles/preview.jpg" />
+
+        <image style="style_PANO_20">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_20.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_20.tiles/PANO_20.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_21" onstart="" thumburl="panos/Pano_21.tiles/thumb.jpg" title="Pano_21">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="26.16" limitview="auto" maxpixelzoom="2.0" vlookat="5.08" />
+
+        <preview url="panos/Pano_21.tiles/preview.jpg" />
+
+        <image style="style_PANO_21">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_21.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_21.tiles/PANO_21.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_22" onstart="" thumburl="panos/Pano_22.tiles/thumb.jpg" title="Pano_22">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-51.96" limitview="auto" maxpixelzoom="2.0" vlookat="-1.54" />
+
+        <preview url="panos/Pano_22.tiles/preview.jpg" />
+
+        <image style="style_PANO_22">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_22.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_22.tiles/PANO_22.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_23" onstart="" thumburl="panos/Pano_23.tiles/thumb.jpg" title="Pano_23">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-66.2" limitview="auto" maxpixelzoom="2.0" vlookat="1.46" />
+
+        <preview url="panos/Pano_23.tiles/preview.jpg" />
+
+        <image style="style_PANO_23">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_23.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_23.tiles/PANO_23.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_24" onstart="" thumburl="panos/Pano_24.tiles/thumb.jpg" title="Pano_24">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-323.99" limitview="auto" maxpixelzoom="2.0" vlookat="1.18" />
+
+        <preview url="panos/Pano_24.tiles/preview.jpg" />
+
+        <image style="style_PANO_24">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_24.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_24.tiles/PANO_24.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_25" onstart="" thumburl="panos/Pano_25.tiles/thumb.jpg" title="Pano_25">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-122.49" limitview="auto" maxpixelzoom="2.0" vlookat="2.05" />
+
+        <preview url="panos/Pano_25.tiles/preview.jpg" />
+
+        <image style="style_PANO_25">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_25.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_25.tiles/PANO_25.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_26" onstart="" thumburl="panos/Pano_26.tiles/thumb.jpg" title="Pano_26">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-202.42" limitview="auto" maxpixelzoom="2.0" vlookat="4.67" />
+
+        <preview url="panos/Pano_26.tiles/preview.jpg" />
+
+        <image style="style_PANO_26">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_26.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_26.tiles/PANO_26.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_27" onstart="" thumburl="panos/Pano_27.tiles/thumb.jpg" title="Pano_27">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-151.53" limitview="auto" maxpixelzoom="2.0" vlookat="1.21" />
+
+        <preview url="panos/Pano_27.tiles/preview.jpg" />
+
+        <image style="style_PANO_27">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_27.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_27.tiles/PANO_27.stl" />
+        </image>
+
+    </scene>
+
+    <scene heading="" lat="" lng="" name="scene_pano_28" onstart="" thumburl="panos/Pano_28.tiles/thumb.jpg" title="Pano_28">
+
+        <control bouncinglimits="calc:image.cube ? true : false" />
+
+        <view fov="120" fovmax="140" fovmin="70" fovtype="MFOV" hlookat="-43.28" limitview="auto" maxpixelzoom="2.0" vlookat="3.09" />
+
+        <preview url="panos/Pano_28.tiles/preview.jpg" />
+
+        <image style="style_PANO_28">
+            <cube multires="512,768,1664,3200,6400,12800" url="panos/Pano_28.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" />
+            <depthmap style="style_depthmap" url="panos/Pano_28.tiles/PANO_28.stl" />
+        </image>
+
+    </scene>
+
+</krpano>
