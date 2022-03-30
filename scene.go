@@ -17,3 +17,14 @@ func (s *Scene) ToXML() (string, error) {
 	}
 	return string(data), nil
 }
+
+func (s *Scene) SetImageStyle(style string) {
+	s.Image.Style = style
+}
+
+func (s *Scene) AddDepthMap(modelPath string) {
+	depthMap := Depthmap{
+		Url: modelPath,
+	}
+	s.Image.Depthmap = &depthMap
+}

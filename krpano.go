@@ -16,3 +16,13 @@ func (krp *Krpano) ToXML() (string, error) {
 	}
 	return string(data), nil
 }
+
+func (krp *Krpano) AddPlugin(pluginStr string) error {
+	var plugin Plugin
+	err := xml.Unmarshal([]byte(pluginStr), &plugin)
+	if err != nil {
+		return err
+	}
+	krp.Plugin = append(krp.Plugin, &plugin)
+	return nil
+}
